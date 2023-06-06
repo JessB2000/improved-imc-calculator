@@ -1,0 +1,66 @@
+body{
+    background-color: #FFFAF0;
+}
+#formulario{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#form{
+    border: 2px solid pink;
+    background-color: bisque;
+}
+#nome{
+    width: 300px; 
+    border: 1px solid black;
+    background-color: azure;
+    font-family: Roboto Mono;
+    border-radius: 40px 40px 30px 40px;
+}
+#peso{
+    width: 180px;
+    border: 1px solid black;
+    background-color: azure;
+    font-family: Roboto Mono;
+    border-radius: 40px 40px 30px 40px;
+}
+#altura{
+    width: 180px;
+    border: 1px solid black;
+    background-color: azure;
+    font-family: Roboto Mono;
+    border-radius: 40px 40px 30px 40px;
+}
+#resultado{
+    width: 150px;
+    border: 1px solid black;
+    border-radius: 40px 40px 30px 40px;
+    background-color:#8B4513;
+    font-family: Roboto Mono;
+    color: white;
+
+}
+p{
+    font-family: Montserrat;
+    color: brown;
+}
+h3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Roboto Mono;
+    color: #8B4513;
+}
+#imctotal{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Montserrat;
+    color:#8B4513;
+    ;
+}
+#master{
+    padding: 50px;
+}
+
