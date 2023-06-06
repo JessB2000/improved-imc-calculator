@@ -36,8 +36,8 @@
             const peso = document.querySelector("#peso").value;
             const altura = document.querySelector("#altura").value;
             const result = document.getElementById("imctotal");
-            const pesoTotal = parseFloat(peso);
-            const alturaTotal = parseFloat(altura);
+            const pesoTotal = parseFloat(peso.replace(',', '.'));
+            const alturaTotal = parseFloat(altura.replace(',', '.'));
             const alturaQuadrado = alturaTotal * alturaTotal;
 
             const imc = parseFloat(pesoTotal / alturaQuadrado);
