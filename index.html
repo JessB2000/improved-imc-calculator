@@ -9,34 +9,33 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Roboto+Mono&display=swap" rel="stylesheet">
-    <title>Cálculo IMC </title>
+    <title>Cálculo IMC</title>
 </head>
 
 <body>
     <div id="master">
-    <h3>Verificador de IMC </h3>
-    <div id="formulario">
-        <form method="post" autocomplete="off" id="form">
-            <p> Insira o seu nome abaixo: </p>
-            <input type="text" placeholder="Insira o seu nome" id="nome">
-            <p>Insira o seu peso abaixo: </p>
-            <input type="text" placeholder="Insira o seu peso" id="peso">
-            <p>Insira a sua altura abaixo: </p>
-            <input type="text" placeholder="Insira a sua altura" id="altura">
-            <input type="button" value="Verifique seu IMC" id="resultado">
-        </form>
+        <h1>Cálculo de IMC</h1>
+        <div id="formulario">
+            <form method="post" autocomplete="off" id="form">
+                <p>Insira o seu nome abaixo:</p>
+                <input type="text" placeholder="Insira o seu nome" id="nome">
+                <p>Insira o seu peso abaixo:</p>
+                <input type="text" placeholder="Insira o seu peso" id="peso">
+                <p>Insira a sua altura abaixo:</p>
+                <input type="text" placeholder="Insira a sua altura" id="altura">
+                <br>
+                <input type="button" value="Verifique seu IMC" id="resultado">
+            </form>
+        </div>
     </div>
-</div>
-    <div id="imctotal">
-
-    </div>
+    <div id="imctotal"></div>
     <script>
-        const submit = document.getElementById("resultado")
+        const submit = document.getElementById("resultado");
         submit.addEventListener("click", function () {
-            const nome = document.querySelector("#nome").value
-            const peso = document.querySelector("#peso").value
-            const altura = document.querySelector("#altura").value
-            const result = document.getElementById("imctotal")
+            const nome = document.querySelector("#nome").value;
+            const peso = document.querySelector("#peso").value;
+            const altura = document.querySelector("#altura").value;
+            const result = document.getElementById("imctotal");
             const pesoTotal = parseFloat(peso);
             const alturaTotal = parseFloat(altura);
             const alturaQuadrado = alturaTotal * alturaTotal;
@@ -44,25 +43,19 @@
             const imc = parseFloat(pesoTotal / alturaQuadrado);
 
             if (imc < 18.5) {
-                result.textContent = nome + ", o seu IMC é: " + imc.toFixed(2) + "kg/m² e você está abaixo do peso!!";
+                result.innerHTML = `<p>${nome}, o seu IMC é: ${imc.toFixed(2)}kg/m² e você está abaixo do peso!!</p>`;
+            } else if (imc >= 18.5 && imc <= 24.9) {
+                result.innerHTML = `<p>${nome}, o seu IMC é: ${imc.toFixed(2)}kg/m² e seu peso está normal!!</p>`;
+            } else if (imc >= 25 && imc <= 29.9) {
+                result.innerHTML = `<p>${nome}, o seu IMC é: ${imc.toFixed(2)}kg/m² e você está com pré-obesidade!!</p>`;
+            } else if (imc >= 30 && imc <= 34.9) {
+                result.innerHTML = `<p>${nome}, o seu IMC é: ${imc.toFixed(2)}kg/m² e você está com obesidade grau I!!</p>`;
+            } else if (imc >= 35 && imc <= 39.9) {
+                result.innerHTML = `<p>${nome}, o seu IMC é: ${imc.toFixed(2)}kg/m² e você está com obesidade grau II!!</p>`;
+            } else if (imc >= 40) {
+                result.innerHTML = `<p>${nome}, o seu IMC é: ${imc.toFixed(2)}kg/m² e você está com obesidade grau III!!</p>`;
             }
-            else if (imc >= 18.5 && imc <= 24.9) {
-                result.textContent = nome + ", o seu IMC é: " + imc.toFixed(2) + "kg/m² e seu peso está normal!!";
-            }
-            else if (imc >= 25 && imc <= 29.9) {
-                result.textContent = nome + ", o seu IMC é: " + imc.toFixed(2) + "kg/m² e você está com pré-obesidade!!";
-            }
-            else if (imc >= 30 && imc <= 34.9) {
-                result.textContent = nome + ", o seu IMC é: " + imc.toFixed(2) + "kg/m² e você está com obesidade grau I !!";
-            }
-            else if (imc >= 35 && imc <= 39.9) {
-                result.textContent = nome + ", o seu IMC é: " + imc.toFixed(2) + "kg/m² e você está com obesidade grau II !!";
-            }
-            else if (imc >= 40) {
-                result.textContent = nome + ", o seu IMC é: " + imc.toFixed(2) + "kg/m² e você está com obesidade grau III !!";
-            }
-        })
-
+        });
     </script>
 </body>
 
